@@ -12,6 +12,7 @@ const Edit = () => {
     useEffect(() => {
         const titleElement = document.getElementsByTagName("title")[0];
         titleElement.innerHTML = `Emotion Diary - Edit Diary ${id}`;
+        // eslint-disable-next-line
       }, []);
     
     useEffect(()=>{
@@ -26,6 +27,7 @@ const Edit = () => {
                 navigate('/', {replace:true}); //Prevent going back
             }
         }
+        // eslint-disable-next-line
     },[diaryList, id]); 
 
     //Bring DiaryEditor, if it has originData

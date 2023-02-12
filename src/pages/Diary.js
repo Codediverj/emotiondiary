@@ -17,6 +17,7 @@ const Diary = () => {
     useEffect(() => {
         const titleElement = document.getElementsByTagName("title")[0];
         titleElement.innerHTML = `Emotion Diary - Diary ${id}`;
+        // eslint-disable-next-line
       }, []);
 
     useEffect(()=>{
@@ -31,6 +32,7 @@ const Diary = () => {
                 navigate('/', {replace:true});
             }
         }
+        // eslint-disable-next-line
     },[diaryList, id]);
 
     if(!data){
@@ -50,7 +52,7 @@ const Diary = () => {
                 <section>
                     <h4>Today's feeling</h4>
                     <div className={["diary_img_wrapper", `diary_img_wrapper_${data.emotion}`].join(" ")}>
-                        <img src={curEmotionData.emotion_img} />
+                        <img src={curEmotionData.emotion_img} alt={`${data.emotion}`} />
                         <div className="emotion_descript">
                             {curEmotionData.emotion_descript}
                         </div>

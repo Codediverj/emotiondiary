@@ -6,8 +6,8 @@ import MyButton from "./MyButton";
 
 const DiaryItem = ({id, emotion, content, date}) => {
     const navigate = useNavigate();
-    //const env = process.env;
-    //env.PUBLIC_URL = env.PUBLIC_URL || "";
+    const env = process.env;
+    env.PUBLIC_URL = env.PUBLIC_URL || "";
     const strDate = getStringDate(new Date(parseInt(date)));
     const goDetail = () => {
         navigate(`/diary/${id}`);
@@ -23,7 +23,7 @@ const DiaryItem = ({id, emotion, content, date}) => {
                 "emotion_img_wrapper", 
                 `emotion_img_wrapper_${emotion}`
                 ].join(" ")}>
-                <img src={process.env.PUBLIC_URL  + `assets/emotion${emotion}.png`}
+                <img src={process.env.PUBLIC_URL  + `/assets/emotion${emotion}.png`}
                 alt={`emotion_img_wrapper_${emotion}`}/>
             </div>
             <div onClick={goDetail} className="info_wrapper">
